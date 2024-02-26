@@ -1,3 +1,1 @@
-local function Wow() end
-print(dassdd)
-print(dang)
+print("Hello world, from server!")

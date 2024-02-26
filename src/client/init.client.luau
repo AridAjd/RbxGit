@@ -1,5 +1,3 @@
-local Hello = "Hey guys"
-
-print("Hey, I'm client!")
-
-local function HiFunction() end
+print("Hello world, from client!")
+print("print 2")
+print("3")
