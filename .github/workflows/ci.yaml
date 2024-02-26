@@ -5,10 +5,7 @@ on:
   push:
     branches:
       - staging
-  pull_request:
-    branches:
       - production
-      - staging
 
 jobs:
   lint:
