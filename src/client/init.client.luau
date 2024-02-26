@@ -1,1 +1,1 @@
-print("Hello world, from client!")
+print("Hey, I'm client!")
