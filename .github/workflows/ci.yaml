@@ -19,8 +19,6 @@ jobs:
         uses: ok-nick/setup-aftman@v0.4.2
       - name: Lint
         run: |
-          selene ./Core
-          selene ./Library
           selene ./src
   style:
     name: Styling
@@ -33,5 +31,5 @@ jobs:
         uses: JohnnyMorganz/stylua-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          version: 4.0.0
+          version: latest
           args: --check .
