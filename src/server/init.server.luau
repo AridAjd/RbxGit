@@ -1,1 +1,2 @@
-print("Hello world, from server!")
+local function Wow() end
+print(dassdd)
