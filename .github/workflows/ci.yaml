@@ -17,13 +17,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.ref }}
 
       - name: Install aftman
         uses: ok-nick/setup-aftman@v0.4.2
         with:
-          version: 1.0.0
+          version: v1.0.0
           path: .
           cache: false
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -38,8 +36,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.ref }}
 
       - name: Install stylua-action
         uses: JohnyMorganz/stylua-action@v1.0.0
