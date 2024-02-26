@@ -21,7 +21,7 @@ jobs:
           ref: ${{ github.event.ref }}
 
       - name: Install aftman
-        uses: ok-nick/setup-aftman@0.4.2
+        uses: ok-nick/setup-aftman@v0.4.2
         with:
           version: 1.0.0
           path: .
@@ -42,7 +42,7 @@ jobs:
           ref: ${{ github.event.ref }}
 
       - name: Install stylua-action
-        uses: JohnyMorganz/stylua-action@1.0.0
+        uses: JohnyMorganz/stylua-action@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --check .
