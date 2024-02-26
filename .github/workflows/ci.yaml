@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - production
+      - staging
+
+jobs:
+  lint:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.ref }}
+
+      - name: Install aftman
+        uses: ok-nick/setup-aftman@0.4.2
+        with:
+          version: 1.0.0
+          path: .
+          cache: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Lint
+        run: |
+          selene ./Core
+          selene ./Library
+          selene ./src
+  style:
+    name: Styling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.ref }}
+
+      - name: Install stylua-action
+        uses: JohnyMorganz/stylua-action@1.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --check .
