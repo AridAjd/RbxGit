@@ -15,4 +15,4 @@ jobs:
 
       - run: |
           rojo build -o place.rbxlx
-          rbxcloud experience publish -f place.rbxl -p 11268463514 -u 4017485445 -t published -a ${{ secrets.API_KEY }}
+          rbxcloud experience publish -f place.rbxlx -p 11268463514 -u 4017485445 -t published -a ${{ secrets.API_KEY }}
