@@ -5,7 +5,6 @@ on: workflow_dispatch
 jobs:
   deploy:
     name: Deploy
-    if: github.event.release.prerelease == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
