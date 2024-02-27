@@ -1,0 +1,22 @@
+name: Production Release
+
+on:
+  release:
+    types:
+      - created
+      - edited
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install aftman
+        uses: ok-nick/setup-aftman@v0.4.2
+
+      - run: |
+          rojo build -o place.rbxlx
+          rbxcloud experience publish -f place.rbxlx -p 11268463514 -u 4017485445 -t published -a ${{ secrets.API_KEY }}
